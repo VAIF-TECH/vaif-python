@@ -19,12 +19,12 @@ import pytest
 from respx import MockRouter
 from pydantic import ValidationError
 
-from vaif_client import Vaif, AsyncVaif, APIResponseValidationError
-from vaif_client._types import Omit
-from vaif_client._utils import asyncify
-from vaif_client._models import BaseModel, FinalRequestOptions
-from vaif_client._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
-from vaif_client._base_client import (
+from vaif import Vaif, AsyncVaif, APIResponseValidationError
+from vaif._types import Omit
+from vaif._utils import asyncify
+from vaif._models import BaseModel, FinalRequestOptions
+from vaif._exceptions import APIStatusError, APITimeoutError, APIResponseValidationError
+from vaif._base_client import (
     DEFAULT_TIMEOUT,
     HTTPX_DEFAULT_TIMEOUT,
     BaseClient,
@@ -286,10 +286,10 @@ class TestVaif:
                         # to_raw_response_wrapper leaks through the @functools.wraps() decorator.
                         #
                         # removing the decorator fixes the leak for reasons we don't understand.
-                        "vaif_client/_legacy_response.py",
-                        "vaif_client/_response.py",
+                        "vaif/_legacy_response.py",
+                        "vaif/_response.py",
                         # pydantic.BaseModel.model_dump || pydantic.BaseModel.dict leak memory for some reason.
-                        "vaif_client/_compat.py",
+                        "vaif/_compat.py",
                         # Standard library leaks we don't care about.
                         "/logging/__init__.py",
                     ]
@@ -870,7 +870,7 @@ class TestVaif:
         calculated = client._calculate_retry_timeout(remaining_retries, options, headers)
         assert calculated == pytest.approx(timeout, 0.5 * 0.875)  # pyright: ignore[reportUnknownMemberType]
 
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter, client: Vaif) -> None:
         respx_mock.post("/auth/login").mock(side_effect=httpx.TimeoutException("Test timeout error"))
@@ -880,7 +880,7 @@ class TestVaif:
 
         assert _get_open_connections(client) == 0
 
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter, client: Vaif) -> None:
         respx_mock.post("/auth/login").mock(return_value=httpx.Response(500))
@@ -890,7 +890,7 @@ class TestVaif:
         assert _get_open_connections(client) == 0
 
     @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     @pytest.mark.parametrize("failure_mode", ["status", "exception"])
     def test_retries_taken(
@@ -921,7 +921,7 @@ class TestVaif:
         assert int(response.http_request.headers.get("x-stainless-retry-count")) == failures_before_success
 
     @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     def test_omit_retry_count_header(self, client: Vaif, failures_before_success: int, respx_mock: MockRouter) -> None:
         client = client.with_options(max_retries=4)
@@ -944,7 +944,7 @@ class TestVaif:
         assert len(response.http_request.headers.get_list("x-stainless-retry-count")) == 0
 
     @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     def test_overwrite_retry_count_header(
         self, client: Vaif, failures_before_success: int, respx_mock: MockRouter
@@ -1199,10 +1199,10 @@ class TestAsyncVaif:
                         # to_raw_response_wrapper leaks through the @functools.wraps() decorator.
                         #
                         # removing the decorator fixes the leak for reasons we don't understand.
-                        "vaif_client/_legacy_response.py",
-                        "vaif_client/_response.py",
+                        "vaif/_legacy_response.py",
+                        "vaif/_response.py",
                         # pydantic.BaseModel.model_dump || pydantic.BaseModel.dict leak memory for some reason.
-                        "vaif_client/_compat.py",
+                        "vaif/_compat.py",
                         # Standard library leaks we don't care about.
                         "/logging/__init__.py",
                     ]
@@ -1798,7 +1798,7 @@ class TestAsyncVaif:
         calculated = async_client._calculate_retry_timeout(remaining_retries, options, headers)
         assert calculated == pytest.approx(timeout, 0.5 * 0.875)  # pyright: ignore[reportUnknownMemberType]
 
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     async def test_retrying_timeout_errors_doesnt_leak(self, respx_mock: MockRouter, async_client: AsyncVaif) -> None:
         respx_mock.post("/auth/login").mock(side_effect=httpx.TimeoutException("Test timeout error"))
@@ -1810,7 +1810,7 @@ class TestAsyncVaif:
 
         assert _get_open_connections(async_client) == 0
 
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     async def test_retrying_status_errors_doesnt_leak(self, respx_mock: MockRouter, async_client: AsyncVaif) -> None:
         respx_mock.post("/auth/login").mock(return_value=httpx.Response(500))
@@ -1822,7 +1822,7 @@ class TestAsyncVaif:
         assert _get_open_connections(async_client) == 0
 
     @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     @pytest.mark.parametrize("failure_mode", ["status", "exception"])
     async def test_retries_taken(
@@ -1853,7 +1853,7 @@ class TestAsyncVaif:
         assert int(response.http_request.headers.get("x-stainless-retry-count")) == failures_before_success
 
     @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     async def test_omit_retry_count_header(
         self, async_client: AsyncVaif, failures_before_success: int, respx_mock: MockRouter
@@ -1878,7 +1878,7 @@ class TestAsyncVaif:
         assert len(response.http_request.headers.get_list("x-stainless-retry-count")) == 0
 
     @pytest.mark.parametrize("failures_before_success", [0, 2, 4])
-    @mock.patch("vaif_client._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
+    @mock.patch("vaif._base_client.BaseClient._calculate_retry_timeout", _low_retry_timeout)
     @pytest.mark.respx(base_url=base_url)
     async def test_overwrite_retry_count_header(
         self, async_client: AsyncVaif, failures_before_success: int, respx_mock: MockRouter

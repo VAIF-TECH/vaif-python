@@ -14,14 +14,14 @@ aiohappyeyeballs==2.6.1
     # via aiohttp
 aiohttp==3.13.3
     # via httpx-aiohttp
-    # via vaif-client
+    # via vaif
 aiosignal==1.4.0
     # via aiohttp
 annotated-types==0.7.0
     # via pydantic
 anyio==4.12.1
     # via httpx
-    # via vaif-client
+    # via vaif
 async-timeout==5.0.1
     # via aiohttp
 attrs==25.4.0
@@ -30,7 +30,7 @@ certifi==2026.1.4
     # via httpcore
     # via httpx
 distro==1.9.0
-    # via vaif-client
+    # via vaif
 exceptiongroup==1.3.1
     # via anyio
 frozenlist==1.8.0
@@ -42,9 +42,9 @@ httpcore==1.0.9
     # via httpx
 httpx==0.28.1
     # via httpx-aiohttp
-    # via vaif-client
+    # via vaif
 httpx-aiohttp==0.1.12
-    # via vaif-client
+    # via vaif
 idna==3.11
     # via anyio
     # via httpx
@@ -56,11 +56,11 @@ propcache==0.4.1
     # via aiohttp
     # via yarl
 pydantic==2.12.5
-    # via vaif-client
+    # via vaif
 pydantic-core==2.41.5
     # via pydantic
 sniffio==1.3.1
-    # via vaif-client
+    # via vaif
 typing-extensions==4.15.0
     # via aiosignal
     # via anyio
@@ -69,7 +69,7 @@ typing-extensions==4.15.0
     # via pydantic
     # via pydantic-core
     # via typing-inspection
-    # via vaif-client
+    # via vaif
 typing-inspection==0.4.2
     # via pydantic
 yarl==1.22.0

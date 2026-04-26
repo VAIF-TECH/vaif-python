@@ -4,8 +4,8 @@ from typing import Sequence
 
 import pytest
 
-from vaif_client._types import FileTypes
-from vaif_client._utils import extract_files
+from vaif._types import FileTypes
+from vaif._utils import extract_files
 
 
 def test_removes_files_from_input() -> None:

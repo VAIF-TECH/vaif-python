@@ -4,7 +4,7 @@ from typing import Any
 
 import pytest
 
-from vaif_client._utils._path import path_template
+from vaif._utils._path import path_template
 
 
 @pytest.mark.parametrize(

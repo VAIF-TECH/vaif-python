@@ -7,17 +7,17 @@ from ._proxy import LazyProxy
 
 
 class ResourcesProxy(LazyProxy[Any]):
-    """A proxy for the `vaif_client.resources` module.
+    """A proxy for the `vaif.resources` module.
 
-    This is used so that we can lazily import `vaif_client.resources` only when
-    needed *and* so that users can just import `vaif_client` and reference `vaif_client.resources`
+    This is used so that we can lazily import `vaif.resources` only when
+    needed *and* so that users can just import `vaif` and reference `vaif.resources`
     """
 
     @override
     def __load__(self) -> Any:
         import importlib
 
-        mod = importlib.import_module("vaif_client.resources")
+        mod = importlib.import_module("vaif.resources")
         return mod
 
 

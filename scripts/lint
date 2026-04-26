@@ -13,4 +13,4 @@ else
 fi
 
 echo "==> Making sure it imports"
-rye run python -c 'import vaif_client'
+rye run python -c 'import vaif'
