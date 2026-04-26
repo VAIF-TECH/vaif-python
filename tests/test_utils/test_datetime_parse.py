@@ -8,7 +8,7 @@ from datetime import date, datetime, timezone, timedelta
 
 import pytest
 
-from vaif_client._utils import parse_date, parse_datetime
+from vaif._utils import parse_date, parse_datetime
 
 
 def create_tz(minutes: int) -> timezone:

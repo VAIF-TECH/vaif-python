@@ -7,9 +7,9 @@ from typing import Any, cast
 
 import pytest
 
+from vaif import Vaif, AsyncVaif
 from tests.utils import assert_matches_type
-from vaif_client import Vaif, AsyncVaif
-from vaif_client.types.billing.org import (
+from vaif.types.billing.org import (
     UsageAlertUpdateResponse,
     UsageAlertUsageAlertsResponse,
 )

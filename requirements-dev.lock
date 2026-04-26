@@ -14,14 +14,14 @@ aiohappyeyeballs==2.6.1
     # via aiohttp
 aiohttp==3.13.3
     # via httpx-aiohttp
-    # via vaif-client
+    # via vaif
 aiosignal==1.4.0
     # via aiohttp
 annotated-types==0.7.0
     # via pydantic
 anyio==4.12.1
     # via httpx
-    # via vaif-client
+    # via vaif
 argcomplete==3.6.3
     # via nox
 async-timeout==5.0.1
@@ -42,7 +42,7 @@ dirty-equals==0.11
 distlib==0.4.0
     # via virtualenv
 distro==1.9.0
-    # via vaif-client
+    # via vaif
 exceptiongroup==1.3.1
     # via anyio
     # via pytest
@@ -60,9 +60,9 @@ httpcore==1.0.9
 httpx==0.28.1
     # via httpx-aiohttp
     # via respx
-    # via vaif-client
+    # via vaif
 httpx-aiohttp==0.1.12
-    # via vaif-client
+    # via vaif
 humanize==4.13.0
     # via nox
 idna==3.11
@@ -99,7 +99,7 @@ propcache==0.4.1
     # via aiohttp
     # via yarl
 pydantic==2.12.5
-    # via vaif-client
+    # via vaif
 pydantic-core==2.41.5
     # via pydantic
 pygments==2.19.2
@@ -119,7 +119,7 @@ ruff==0.14.13
 six==1.17.0
     # via python-dateutil
 sniffio==1.3.1
-    # via vaif-client
+    # via vaif
 time-machine==2.19.0
 tomli==2.4.0
     # via dependency-groups
@@ -137,7 +137,7 @@ typing-extensions==4.15.0
     # via pyright
     # via pytest-asyncio
     # via typing-inspection
-    # via vaif-client
+    # via vaif
     # via virtualenv
 typing-inspection==0.4.2
     # via pydantic

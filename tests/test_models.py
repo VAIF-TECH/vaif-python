@@ -7,9 +7,9 @@ import pytest
 import pydantic
 from pydantic import Field
 
-from vaif_client._utils import PropertyInfo
-from vaif_client._compat import PYDANTIC_V1, parse_obj, model_dump, model_json
-from vaif_client._models import DISCRIMINATOR_CACHE, BaseModel, construct_type
+from vaif._utils import PropertyInfo
+from vaif._compat import PYDANTIC_V1, parse_obj, model_dump, model_json
+from vaif._models import DISCRIMINATOR_CACHE, BaseModel, construct_type
 
 
 class BasicModel(BaseModel):

@@ -7,9 +7,9 @@ from typing import Any, cast
 
 import pytest
 
+from vaif import Vaif, AsyncVaif
 from tests.utils import assert_matches_type
-from vaif_client import Vaif, AsyncVaif
-from vaif_client.types.incidents import AckAckResponse
+from vaif.types.incidents import AckAckResponse
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 
