@@ -1,0 +1,164 @@
+# File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+from __future__ import annotations
+
+import httpx
+
+from ..._types import Body, Query, Headers, NotGiven, not_given
+from ..._utils import path_template
+from ..._compat import cached_property
+from ..._resource import SyncAPIResource, AsyncAPIResource
+from ..._response import (
+    to_raw_response_wrapper,
+    to_streamed_response_wrapper,
+    async_to_raw_response_wrapper,
+    async_to_streamed_response_wrapper,
+)
+from ..._base_client import make_request_options
+from ...types.schema_engine.change_get_changes_response import ChangeGetChangesResponse
+
+__all__ = ["ChangesResource", "AsyncChangesResource"]
+
+
+class ChangesResource(SyncAPIResource):
+    @cached_property
+    def with_raw_response(self) -> ChangesResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/VAIF-TECH/vaif-python#accessing-raw-response-data-eg-headers
+        """
+        return ChangesResourceWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> ChangesResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/VAIF-TECH/vaif-python#with_streaming_response
+        """
+        return ChangesResourceWithStreamingResponse(self)
+
+    def get_changes(
+        self,
+        project_id: str,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> ChangeGetChangesResponse:
+        """
+        Get schema change history for a project
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not project_id:
+            raise ValueError(f"Expected a non-empty value for `project_id` but received {project_id!r}")
+        return self._get(
+            path_template("/schema-engine/{project_id}/changes", project_id=project_id),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=ChangeGetChangesResponse,
+        )
+
+
+class AsyncChangesResource(AsyncAPIResource):
+    @cached_property
+    def with_raw_response(self) -> AsyncChangesResourceWithRawResponse:
+        """
+        This property can be used as a prefix for any HTTP method call to return
+        the raw response object instead of the parsed content.
+
+        For more information, see https://www.github.com/VAIF-TECH/vaif-python#accessing-raw-response-data-eg-headers
+        """
+        return AsyncChangesResourceWithRawResponse(self)
+
+    @cached_property
+    def with_streaming_response(self) -> AsyncChangesResourceWithStreamingResponse:
+        """
+        An alternative to `.with_raw_response` that doesn't eagerly read the response body.
+
+        For more information, see https://www.github.com/VAIF-TECH/vaif-python#with_streaming_response
+        """
+        return AsyncChangesResourceWithStreamingResponse(self)
+
+    async def get_changes(
+        self,
+        project_id: str,
+        *,
+        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+        # The extra values given here take precedence over values defined on the client or passed to this method.
+        extra_headers: Headers | None = None,
+        extra_query: Query | None = None,
+        extra_body: Body | None = None,
+        timeout: float | httpx.Timeout | None | NotGiven = not_given,
+    ) -> ChangeGetChangesResponse:
+        """
+        Get schema change history for a project
+
+        Args:
+          extra_headers: Send extra headers
+
+          extra_query: Add additional query parameters to the request
+
+          extra_body: Add additional JSON properties to the request
+
+          timeout: Override the client-level default timeout for this request, in seconds
+        """
+        if not project_id:
+            raise ValueError(f"Expected a non-empty value for `project_id` but received {project_id!r}")
+        return await self._get(
+            path_template("/schema-engine/{project_id}/changes", project_id=project_id),
+            options=make_request_options(
+                extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
+            ),
+            cast_to=ChangeGetChangesResponse,
+        )
+
+
+class ChangesResourceWithRawResponse:
+    def __init__(self, changes: ChangesResource) -> None:
+        self._changes = changes
+
+        self.get_changes = to_raw_response_wrapper(
+            changes.get_changes,
+        )
+
+
+class AsyncChangesResourceWithRawResponse:
+    def __init__(self, changes: AsyncChangesResource) -> None:
+        self._changes = changes
+
+        self.get_changes = async_to_raw_response_wrapper(
+            changes.get_changes,
+        )
+
+
+class ChangesResourceWithStreamingResponse:
+    def __init__(self, changes: ChangesResource) -> None:
+        self._changes = changes
+
+        self.get_changes = to_streamed_response_wrapper(
+            changes.get_changes,
+        )
+
+
+class AsyncChangesResourceWithStreamingResponse:
+    def __init__(self, changes: AsyncChangesResource) -> None:
+        self._changes = changes
+
+        self.get_changes = async_to_streamed_response_wrapper(
+            changes.get_changes,
+        )
