@@ -1,0 +1,289 @@
+# File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
+
+from __future__ import annotations
+
+import os
+from typing import Any, cast
+
+import pytest
+
+from vaif import Vaif, AsyncVaif
+from tests.utils import assert_matches_type
+
+base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
+
+
+class TestTriggers:
+    parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
+
+    @parametrize
+    def test_method_delete(self, client: Vaif) -> None:
+        trigger = client.functions.triggers.delete(
+            "triggerId",
+        )
+        assert trigger is None
+
+    @parametrize
+    def test_raw_response_delete(self, client: Vaif) -> None:
+        response = client.functions.triggers.with_raw_response.delete(
+            "triggerId",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        trigger = response.parse()
+        assert trigger is None
+
+    @parametrize
+    def test_streaming_response_delete(self, client: Vaif) -> None:
+        with client.functions.triggers.with_streaming_response.delete(
+            "triggerId",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            trigger = response.parse()
+            assert trigger is None
+
+        assert cast(Any, response.is_closed) is True
+
+    @parametrize
+    def test_path_params_delete(self, client: Vaif) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `trigger_id` but received ''"):
+            client.functions.triggers.with_raw_response.delete(
+                "",
+            )
+
+    @parametrize
+    def test_method_get_triggers(self, client: Vaif) -> None:
+        trigger = client.functions.triggers.get_triggers(
+            "functionId",
+        )
+        assert trigger is None
+
+    @parametrize
+    def test_raw_response_get_triggers(self, client: Vaif) -> None:
+        response = client.functions.triggers.with_raw_response.get_triggers(
+            "functionId",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        trigger = response.parse()
+        assert trigger is None
+
+    @parametrize
+    def test_streaming_response_get_triggers(self, client: Vaif) -> None:
+        with client.functions.triggers.with_streaming_response.get_triggers(
+            "functionId",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            trigger = response.parse()
+            assert trigger is None
+
+        assert cast(Any, response.is_closed) is True
+
+    @parametrize
+    def test_path_params_get_triggers(self, client: Vaif) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `function_id` but received ''"):
+            client.functions.triggers.with_raw_response.get_triggers(
+                "",
+            )
+
+    @parametrize
+    def test_method_triggers(self, client: Vaif) -> None:
+        trigger = client.functions.triggers.triggers(
+            function_id="functionId",
+            event="db.insert",
+            table_name="x",
+        )
+        assert_matches_type(object, trigger, path=["response"])
+
+    @parametrize
+    def test_method_triggers_with_all_params(self, client: Vaif) -> None:
+        trigger = client.functions.triggers.triggers(
+            function_id="functionId",
+            event="db.insert",
+            table_name="x",
+            enabled=True,
+            filter={"foo": "bar"},
+        )
+        assert_matches_type(object, trigger, path=["response"])
+
+    @parametrize
+    def test_raw_response_triggers(self, client: Vaif) -> None:
+        response = client.functions.triggers.with_raw_response.triggers(
+            function_id="functionId",
+            event="db.insert",
+            table_name="x",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        trigger = response.parse()
+        assert_matches_type(object, trigger, path=["response"])
+
+    @parametrize
+    def test_streaming_response_triggers(self, client: Vaif) -> None:
+        with client.functions.triggers.with_streaming_response.triggers(
+            function_id="functionId",
+            event="db.insert",
+            table_name="x",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            trigger = response.parse()
+            assert_matches_type(object, trigger, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
+    @parametrize
+    def test_path_params_triggers(self, client: Vaif) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `function_id` but received ''"):
+            client.functions.triggers.with_raw_response.triggers(
+                function_id="",
+                event="db.insert",
+                table_name="x",
+            )
+
+
+class TestAsyncTriggers:
+    parametrize = pytest.mark.parametrize(
+        "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
+    )
+
+    @parametrize
+    async def test_method_delete(self, async_client: AsyncVaif) -> None:
+        trigger = await async_client.functions.triggers.delete(
+            "triggerId",
+        )
+        assert trigger is None
+
+    @parametrize
+    async def test_raw_response_delete(self, async_client: AsyncVaif) -> None:
+        response = await async_client.functions.triggers.with_raw_response.delete(
+            "triggerId",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        trigger = await response.parse()
+        assert trigger is None
+
+    @parametrize
+    async def test_streaming_response_delete(self, async_client: AsyncVaif) -> None:
+        async with async_client.functions.triggers.with_streaming_response.delete(
+            "triggerId",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            trigger = await response.parse()
+            assert trigger is None
+
+        assert cast(Any, response.is_closed) is True
+
+    @parametrize
+    async def test_path_params_delete(self, async_client: AsyncVaif) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `trigger_id` but received ''"):
+            await async_client.functions.triggers.with_raw_response.delete(
+                "",
+            )
+
+    @parametrize
+    async def test_method_get_triggers(self, async_client: AsyncVaif) -> None:
+        trigger = await async_client.functions.triggers.get_triggers(
+            "functionId",
+        )
+        assert trigger is None
+
+    @parametrize
+    async def test_raw_response_get_triggers(self, async_client: AsyncVaif) -> None:
+        response = await async_client.functions.triggers.with_raw_response.get_triggers(
+            "functionId",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        trigger = await response.parse()
+        assert trigger is None
+
+    @parametrize
+    async def test_streaming_response_get_triggers(self, async_client: AsyncVaif) -> None:
+        async with async_client.functions.triggers.with_streaming_response.get_triggers(
+            "functionId",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            trigger = await response.parse()
+            assert trigger is None
+
+        assert cast(Any, response.is_closed) is True
+
+    @parametrize
+    async def test_path_params_get_triggers(self, async_client: AsyncVaif) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `function_id` but received ''"):
+            await async_client.functions.triggers.with_raw_response.get_triggers(
+                "",
+            )
+
+    @parametrize
+    async def test_method_triggers(self, async_client: AsyncVaif) -> None:
+        trigger = await async_client.functions.triggers.triggers(
+            function_id="functionId",
+            event="db.insert",
+            table_name="x",
+        )
+        assert_matches_type(object, trigger, path=["response"])
+
+    @parametrize
+    async def test_method_triggers_with_all_params(self, async_client: AsyncVaif) -> None:
+        trigger = await async_client.functions.triggers.triggers(
+            function_id="functionId",
+            event="db.insert",
+            table_name="x",
+            enabled=True,
+            filter={"foo": "bar"},
+        )
+        assert_matches_type(object, trigger, path=["response"])
+
+    @parametrize
+    async def test_raw_response_triggers(self, async_client: AsyncVaif) -> None:
+        response = await async_client.functions.triggers.with_raw_response.triggers(
+            function_id="functionId",
+            event="db.insert",
+            table_name="x",
+        )
+
+        assert response.is_closed is True
+        assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+        trigger = await response.parse()
+        assert_matches_type(object, trigger, path=["response"])
+
+    @parametrize
+    async def test_streaming_response_triggers(self, async_client: AsyncVaif) -> None:
+        async with async_client.functions.triggers.with_streaming_response.triggers(
+            function_id="functionId",
+            event="db.insert",
+            table_name="x",
+        ) as response:
+            assert not response.is_closed
+            assert response.http_request.headers.get("X-Stainless-Lang") == "python"
+
+            trigger = await response.parse()
+            assert_matches_type(object, trigger, path=["response"])
+
+        assert cast(Any, response.is_closed) is True
+
+    @parametrize
+    async def test_path_params_triggers(self, async_client: AsyncVaif) -> None:
+        with pytest.raises(ValueError, match=r"Expected a non-empty value for `function_id` but received ''"):
+            await async_client.functions.triggers.with_raw_response.triggers(
+                function_id="",
+                event="db.insert",
+                table_name="x",
+            )
