@@ -1,6 +1,6 @@
 [project]
 name = "vaif"
-version = "0.1.0"
+version = "0.2.0"
 description = "The official Python library for the vaif API"
 dynamic = ["readme"]
 license = "Apache-2.0"
@@ -42,6 +42,7 @@ Repository = "https://github.com/VAIF-TECH/vaif-python"
 
 [project.optional-dependencies]
 aiohttp = ["aiohttp", "httpx_aiohttp>=0.1.9"]
+realtime = ["websockets>=12.0"]
 
 [tool.rye]
 managed = true
