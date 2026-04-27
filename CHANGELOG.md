@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 (2026-04-27)
+
+Full Changelog: [v0.1.0...v0.2.0](https://github.com/VAIF-TECH/vaif-python/compare/v0.1.0...v0.2.0)
+
+### Features
+
+* realtime + storage MVP (Python parity with @vaif/client@0.3.0) ([#2](https://github.com/VAIF-TECH/vaif-python/issues/2)) ([70ca8e7](https://github.com/VAIF-TECH/vaif-python/commit/70ca8e766d5b3363de506a2975ecb527695127d6))
+
 ## 0.2.0 (2026-04-26)
 
 ### Features
