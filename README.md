@@ -18,7 +18,14 @@ The REST API documentation can be found on [docs.vaif.studio](https://docs.vaif.
 ```sh
 # install from PyPI
 pip install vaif
+
+# include the realtime extra for WebSocket subscriptions
+pip install "vaif[realtime]"
 ```
+
+> **Note:** The legacy `vaif-client` package is deprecated. New users should
+> install `vaif` instead. See [docs/storage_quickstart.md](docs/storage_quickstart.md)
+> and [docs/realtime_quickstart.md](docs/realtime_quickstart.md) for the new APIs.
 
 ## Usage
 
@@ -37,6 +44,57 @@ login = client.auth.login.create(
 )
 print(login.access_token)
 ```
+
+## Realtime quickstart
+
+```python
+import asyncio
+from vaif import AsyncVaif
+from vaif.lib.realtime import Realtime
+
+async def main():
+    vaif = AsyncVaif(api_key="...")
+    rt = Realtime(client=vaif)
+    await rt.connect()
+    channel = rt.channel("room:1")
+
+    @channel.on_broadcast(event="msg")
+    async def on_msg(payload):
+        print("got", payload)
+
+    await channel.subscribe()
+    await channel.send_broadcast("msg", {"text": "hello"})
+    await asyncio.sleep(2)
+    await rt.disconnect()
+
+asyncio.run(main())
+```
+
+See [docs/realtime_quickstart.md](docs/realtime_quickstart.md) for presence,
+postgres-changes, and reconnect details.
+
+## Storage quickstart
+
+```python
+from vaif import AsyncVaif
+from vaif.lib.storage import upload
+
+async def main():
+    vaif = AsyncVaif(api_key="...")
+    result = await upload(
+        vaif,
+        bucket="avatars",
+        path="me.jpg",
+        file=open("/path/to/me.jpg", "rb"),
+        content_type="image/jpeg",
+    )
+    print(result["path"], result.get("etag"))
+```
+
+Files larger than 5 MB are uploaded via the multipart flow automatically. Pass
+`on_progress=` for byte-level progress updates and call `await handle.cancel()`
+on the returned handle to abort. See
+[docs/storage_quickstart.md](docs/storage_quickstart.md) for details.
 
 ## Async usage
 

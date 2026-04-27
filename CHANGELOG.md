@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.2.0 (2026-04-26)
+
+### Features
+
+* **realtime:** WebSocket realtime client (`vaif.lib.realtime.Realtime`) with
+  channels, broadcasts, presence, and Postgres change feeds. Install with
+  `pip install "vaif[realtime]"`.
+* **storage:** Async upload helper (`vaif.lib.storage.upload`) with one-shot +
+  multipart flows, concurrent chunk uploads, retries, progress callbacks, and
+  cancellation. Plus `upload_to_signed_url` for direct presigned-URL uploads.
+* **public:** `Realtime`, `RealtimeClient`, `upload`, `UploadHandle` re-exported
+  from the top-level `vaif` package (Realtime is lazily loaded only when the
+  optional `websockets` dep is installed).
+
+### Docs
+
+* Add `docs/realtime_quickstart.md` and `docs/storage_quickstart.md`.
+
 ## 0.1.0 (2026-04-26)
 
 Full Changelog: [v0.0.1...v0.1.0](https://github.com/VAIF-TECH/vaif-python/compare/v0.0.1...v0.1.0)

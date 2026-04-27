@@ -78,6 +78,22 @@ if not _t.TYPE_CHECKING:
 
 _setup_logging()
 
+# ─── Hand-written extensions (vaif.lib.*) ─────────────────────────────
+# Storage is always available (uses httpx, already a runtime dep).
+# Realtime requires the optional `websockets` dependency — install with
+# ``pip install vaif[realtime]``. We import lazily so the top-level package
+# stays importable without it.
+
+from .lib.storage import upload, UploadHandle  # noqa: E402
+
+try:  # pragma: no cover — optional extra
+    from .lib.realtime import Realtime, RealtimeClient  # noqa: F401, E402
+except ImportError:  # noqa: BLE001
+    Realtime = None  # type: ignore[assignment,misc]
+    RealtimeClient = None  # type: ignore[assignment,misc]
+
+__all__ += ["upload", "UploadHandle", "Realtime", "RealtimeClient"]
+
 # Update the __module__ attribute for exported symbols so that
 # error messages point to this module instead of the module
 # it was originally defined in, e.g.
