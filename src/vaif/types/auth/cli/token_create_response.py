@@ -11,6 +11,8 @@ __all__ = ["TokenCreateResponse", "UnionMember0", "UnionMember1", "UnionMember1U
 
 
 class UnionMember0(BaseModel):
+    """CLI auth token poll: still pending — the user hasn't approved the device yet."""
+
     ok: Literal[False]
 
     status: Literal["pending"]
@@ -25,6 +27,8 @@ class UnionMember1User(BaseModel):
 
 
 class UnionMember1(BaseModel):
+    """CLI auth token poll: approved — token issued, login complete."""
+
     access_token: str = FieldInfo(alias="accessToken")
 
     expires_in: float = FieldInfo(alias="expiresIn")
