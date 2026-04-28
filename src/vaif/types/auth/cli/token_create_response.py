@@ -7,10 +7,15 @@ from pydantic import Field as FieldInfo
 
 from ...._models import BaseModel
 
-__all__ = ["TokenCreateResponse", "UnionMember0", "UnionMember1", "UnionMember1User"]
+__all__ = [
+    "TokenCreateResponse",
+    "AuthCliTokenPost200Variant0",
+    "AuthCliTokenPost200Variant1",
+    "AuthCliTokenPost200Variant1User",
+]
 
 
-class UnionMember0(BaseModel):
+class AuthCliTokenPost200Variant0(BaseModel):
     """CLI auth token poll: still pending — the user hasn't approved the device yet."""
 
     ok: Literal[False]
@@ -18,7 +23,7 @@ class UnionMember0(BaseModel):
     status: Literal["pending"]
 
 
-class UnionMember1User(BaseModel):
+class AuthCliTokenPost200Variant1User(BaseModel):
     id: str
 
     email: str
@@ -26,7 +31,7 @@ class UnionMember1User(BaseModel):
     name: Optional[str] = None
 
 
-class UnionMember1(BaseModel):
+class AuthCliTokenPost200Variant1(BaseModel):
     """CLI auth token poll: approved — token issued, login complete."""
 
     access_token: str = FieldInfo(alias="accessToken")
@@ -35,7 +40,7 @@ class UnionMember1(BaseModel):
 
     ok: Literal[True]
 
-    user: UnionMember1User
+    user: AuthCliTokenPost200Variant1User
 
 
-TokenCreateResponse: TypeAlias = Union[UnionMember0, UnionMember1]
+TokenCreateResponse: TypeAlias = Union[AuthCliTokenPost200Variant0, AuthCliTokenPost200Variant1]
