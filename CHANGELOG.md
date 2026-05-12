@@ -1,5 +1,26 @@
 # Changelog
 
+## 0.3.0 (2026-05-12)
+
+Full Changelog: [v0.2.0...v0.3.0](https://github.com/VAIF-TECH/vaif-python/compare/v0.2.0...v0.3.0)
+
+### Features
+
+* **internal/types:** support eagerly validating pydantic iterators ([f5dbfde](https://github.com/VAIF-TECH/vaif-python/commit/f5dbfdeb5aa2dcc3423bb67f601dd14b746b5cc1))
+* support setting headers via env ([2e4f9c8](https://github.com/VAIF-TECH/vaif-python/commit/2e4f9c88c6cb88af31fc7ea43cefec5f4085b778))
+
+
+### Bug Fixes
+
+* **client:** add missing f-string prefix in file type error message ([53ec34e](https://github.com/VAIF-TECH/vaif-python/commit/53ec34e1c9a1f354e88ed816d2c1c23946073813))
+* go target needs package_name, not module_path ([ee13cd8](https://github.com/VAIF-TECH/vaif-python/commit/ee13cd8d8dfdfcc0fcc429bc130f65b9a1e9725d))
+* use correct field name format for multipart file arrays ([d843ae4](https://github.com/VAIF-TECH/vaif-python/commit/d843ae43621b96ec4259f77d9d9411a3806b9290))
+
+
+### Chores
+
+* **internal:** reformat pyproject.toml ([61c5c7a](https://github.com/VAIF-TECH/vaif-python/commit/61c5c7adb7662aa2e785e811bd424dbcb95d6b74))
+
 ## 0.2.0 (2026-04-27)
 
 Full Changelog: [v0.1.0...v0.2.0](https://github.com/VAIF-TECH/vaif-python/compare/v0.1.0...v0.2.0)
