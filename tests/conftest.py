@@ -10,15 +10,15 @@ import httpx
 import pytest
 from pytest_asyncio import is_async_test
 
-from vaif import Vaif, AsyncVaif, DefaultAioHttpClient
-from vaif._utils import is_dict
+from vaif_api import Vaif, AsyncVaif, DefaultAioHttpClient
+from vaif_api._utils import is_dict
 
 if TYPE_CHECKING:
     from _pytest.fixtures import FixtureRequest  # pyright: ignore[reportPrivateImportUsage]
 
 pytest.register_assert_rewrite("tests.utils")
 
-logging.getLogger("vaif").setLevel(logging.DEBUG)
+logging.getLogger("vaif_api").setLevel(logging.DEBUG)
 
 
 # automatically add `pytest.mark.asyncio()` to all of our async tests

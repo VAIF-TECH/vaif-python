@@ -8,8 +8,8 @@ from typing import Any, TypeVar, Iterator, Sequence, cast
 from datetime import date, datetime
 from typing_extensions import Literal, get_args, get_origin, assert_type
 
-from vaif._types import Omit, NoneType
-from vaif._utils import (
+from vaif_api._types import Omit, NoneType
+from vaif_api._utils import (
     is_dict,
     is_list,
     is_list_type,
@@ -19,8 +19,8 @@ from vaif._utils import (
     is_annotated_type,
     is_type_alias_type,
 )
-from vaif._compat import PYDANTIC_V1, field_outer_type, get_model_fields
-from vaif._models import BaseModel
+from vaif_api._compat import PYDANTIC_V1, field_outer_type, get_model_fields
+from vaif_api._models import BaseModel
 
 BaseModelT = TypeVar("BaseModelT", bound=BaseModel)
 

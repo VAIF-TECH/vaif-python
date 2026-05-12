@@ -8,15 +8,15 @@ from typing_extensions import Required, Annotated, TypedDict
 
 import pytest
 
-from vaif._types import Base64FileInput, omit, not_given
-from vaif._utils import (
+from vaif_api._types import Base64FileInput, omit, not_given
+from vaif_api._utils import (
     PropertyInfo,
     transform as _transform,
     parse_datetime,
     async_transform as _async_transform,
 )
-from vaif._compat import PYDANTIC_V1
-from vaif._models import BaseModel
+from vaif_api._compat import PYDANTIC_V1
+from vaif_api._models import BaseModel
 
 _T = TypeVar("_T")
 

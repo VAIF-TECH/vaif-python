@@ -5,8 +5,8 @@ from typing import Union
 
 import pydantic
 
-from vaif import _compat
-from vaif._utils._json import openapi_dumps
+from vaif_api import _compat
+from vaif_api._utils._json import openapi_dumps
 
 
 class TestOpenapiDumps:

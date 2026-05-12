@@ -8,9 +8,9 @@ import pytest
 import pydantic
 from pydantic import Field
 
-from vaif._utils import PropertyInfo
-from vaif._compat import PYDANTIC_V1, parse_obj, model_dump, model_json
-from vaif._models import DISCRIMINATOR_CACHE, BaseModel, EagerIterable, construct_type
+from vaif_api._utils import PropertyInfo
+from vaif_api._compat import PYDANTIC_V1, parse_obj, model_dump, model_json
+from vaif_api._models import DISCRIMINATOR_CACHE, BaseModel, EagerIterable, construct_type
 
 
 class BasicModel(BaseModel):

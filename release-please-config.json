@@ -61,6 +61,6 @@
   ],
   "release-type": "python",
   "extra-files": [
-    "src/vaif/_version.py"
+    "src/vaif_api/_version.py"
   ]
 }
