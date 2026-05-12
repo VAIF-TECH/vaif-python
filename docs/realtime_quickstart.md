@@ -16,8 +16,8 @@ The realtime feature requires the optional `websockets` dependency.
 
 ```python
 import asyncio
-from vaif import AsyncVaif
-from vaif.lib.realtime import Realtime
+from vaif_api import AsyncVaif
+from vaif_api.lib.realtime import Realtime
 
 async def main():
     vaif = AsyncVaif(api_key="...")

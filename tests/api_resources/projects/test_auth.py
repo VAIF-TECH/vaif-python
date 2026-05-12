@@ -7,9 +7,9 @@ from typing import Any, cast
 
 import pytest
 
-from vaif import Vaif, AsyncVaif
+from vaif_api import Vaif, AsyncVaif
 from tests.utils import assert_matches_type
-from vaif.types.projects import (
+from vaif_api.types.projects import (
     AuthLoginResponse,
     AuthSignupResponse,
     AuthUpdateResponse,

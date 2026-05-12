@@ -53,7 +53,7 @@ from .protocol import (
     parse_server_message,
 )
 
-log = logging.getLogger("vaif.realtime")
+log = logging.getLogger("vaif_api.realtime")
 
 
 # Default config values mirror the JS SDK.
@@ -111,7 +111,7 @@ class RealtimeClient:
 
     Usage::
 
-        from vaif.lib.realtime import Realtime
+        from vaif_api.lib.realtime import Realtime
 
         rt = Realtime(client=vaif)
         await rt.connect()

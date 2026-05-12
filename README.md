@@ -32,7 +32,7 @@ pip install "vaif[realtime]"
 The full API of this library can be found in [api.md](api.md).
 
 ```python
-from vaif import Vaif
+from vaif_api import Vaif
 
 client = Vaif(
     api_key="My API Key",
@@ -49,8 +49,8 @@ print(login.access_token)
 
 ```python
 import asyncio
-from vaif import AsyncVaif
-from vaif.lib.realtime import Realtime
+from vaif_api import AsyncVaif
+from vaif_api.lib.realtime import Realtime
 
 async def main():
     vaif = AsyncVaif(api_key="...")
@@ -76,8 +76,8 @@ postgres-changes, and reconnect details.
 ## Storage quickstart
 
 ```python
-from vaif import AsyncVaif
-from vaif.lib.storage import upload
+from vaif_api import AsyncVaif
+from vaif_api.lib.storage import upload
 
 async def main():
     vaif = AsyncVaif(api_key="...")
@@ -102,7 +102,7 @@ Simply import `AsyncVaif` instead of `Vaif` and use `await` with each API call:
 
 ```python
 import asyncio
-from vaif import AsyncVaif
+from vaif_api import AsyncVaif
 
 client = AsyncVaif(
     api_key="My API Key",
@@ -137,8 +137,8 @@ Then you can enable it by instantiating the client with `http_client=DefaultAioH
 
 ```python
 import asyncio
-from vaif import DefaultAioHttpClient
-from vaif import AsyncVaif
+from vaif_api import DefaultAioHttpClient
+from vaif_api import AsyncVaif
 
 
 async def main() -> None:
@@ -170,7 +170,7 @@ Typed requests and responses provide autocomplete and documentation within your 
 Nested parameters are dictionaries, typed using `TypedDict`, for example:
 
 ```python
-from vaif import Vaif
+from vaif_api import Vaif
 
 client = Vaif()
 
@@ -192,8 +192,8 @@ response), a subclass of `vaif.APIStatusError` is raised, containing `status_cod
 All errors inherit from `vaif.APIError`.
 
 ```python
-import vaif
-from vaif import Vaif
+import vaif_api
+from vaif_api import Vaif
 
 client = Vaif()
 
@@ -235,7 +235,7 @@ Connection errors (for example, due to a network connectivity problem), 408 Requ
 You can use the `max_retries` option to configure or disable retry settings:
 
 ```python
-from vaif import Vaif
+from vaif_api import Vaif
 
 # Configure the default for all requests:
 client = Vaif(
@@ -256,7 +256,7 @@ By default requests time out after 1 minute. You can configure this with a `time
 which accepts a float or an [`httpx.Timeout`](https://www.python-httpx.org/advanced/timeouts/#fine-tuning-the-configuration) object:
 
 ```python
-from vaif import Vaif
+from vaif_api import Vaif
 
 # Configure the default for all requests:
 client = Vaif(
@@ -311,7 +311,7 @@ if response.my_field is None:
 The "raw" Response object can be accessed by prefixing `.with_raw_response.` to any HTTP method call, e.g.,
 
 ```py
-from vaif import Vaif
+from vaif_api import Vaif
 
 client = Vaif()
 response = client.auth.login.with_raw_response.create(
@@ -391,7 +391,7 @@ You can directly override the [httpx client](https://www.python-httpx.org/api/#c
 
 ```python
 import httpx
-from vaif import Vaif, DefaultHttpxClient
+from vaif_api import Vaif, DefaultHttpxClient
 
 client = Vaif(
     # Or use the `VAIF_BASE_URL` env var
@@ -414,7 +414,7 @@ client.with_options(http_client=DefaultHttpxClient(...))
 By default the library closes underlying HTTP connections whenever the client is [garbage collected](https://docs.python.org/3/reference/datamodel.html#object.__del__). You can manually close the client using the `.close()` method if desired, or with a context manager that closes when exiting.
 
 ```py
-from vaif import Vaif
+from vaif_api import Vaif
 
 with Vaif() as client:
   # make requests here
@@ -442,7 +442,7 @@ If you've upgraded to the latest version but aren't seeing any new features you 
 You can determine the version that is being used at runtime with:
 
 ```py
-import vaif
+import vaif_api
 print(vaif.__version__)
 ```
 

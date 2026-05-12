@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from vaif.lib.realtime.protocol import (
+from vaif_api.lib.realtime.protocol import (
     Broadcast,
     Subscribe,
     BroadcastReceived,

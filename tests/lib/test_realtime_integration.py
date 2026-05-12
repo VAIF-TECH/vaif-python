@@ -9,7 +9,7 @@ from typing import Any, Dict, List
 import pytest
 import websockets
 
-from vaif.lib.realtime import Realtime
+from vaif_api.lib.realtime import Realtime
 
 
 pytestmark = pytest.mark.asyncio

@@ -5,8 +5,8 @@ from typing import Iterator, AsyncIterator
 import httpx
 import pytest
 
-from vaif import Vaif, AsyncVaif
-from vaif._streaming import Stream, AsyncStream, ServerSentEvent
+from vaif_api import Vaif, AsyncVaif
+from vaif_api._streaming import Stream, AsyncStream, ServerSentEvent
 
 
 @pytest.mark.asyncio

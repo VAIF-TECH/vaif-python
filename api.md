@@ -46,7 +46,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot.deploy import HistoryRetrieveResponse
+from vaif_api.types.ai.copilot.deploy import HistoryRetrieveResponse
 ```
 
 Methods:
@@ -72,7 +72,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot import ExecuteCreateResponse
+from vaif_api.types.ai.copilot import ExecuteCreateResponse
 ```
 
 Methods:
@@ -97,7 +97,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot.executions import ResumeResumeResponse
+from vaif_api.types.ai.copilot.executions import ResumeResumeResponse
 ```
 
 Methods:
@@ -109,7 +109,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot.executions import RollbackRollbackResponse
+from vaif_api.types.ai.copilot.executions import RollbackRollbackResponse
 ```
 
 Methods:
@@ -159,7 +159,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot import FeedbackCreateResponse
+from vaif_api.types.ai.copilot import FeedbackCreateResponse
 ```
 
 Methods:
@@ -248,7 +248,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot import JobCreateResponse
+from vaif_api.types.ai.copilot import JobCreateResponse
 ```
 
 Methods:
@@ -317,7 +317,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot import RateCreateResponse
+from vaif_api.types.ai.copilot import RateCreateResponse
 ```
 
 Methods:
@@ -329,7 +329,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot import SessionUpdateResponse
+from vaif_api.types.ai.copilot import SessionUpdateResponse
 ```
 
 Methods:
@@ -344,7 +344,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.ai.copilot import TrainingConsentCreateResponse
+from vaif_api.types.ai.copilot import TrainingConsentCreateResponse
 ```
 
 Methods:
@@ -459,7 +459,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.cli import AuthorizeCreateResponse
+from vaif_api.types.auth.cli import AuthorizeCreateResponse
 ```
 
 Methods:
@@ -471,7 +471,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.cli import CallbackCreateResponse
+from vaif_api.types.auth.cli import CallbackCreateResponse
 ```
 
 Methods:
@@ -483,7 +483,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.cli import LoginCreateResponse
+from vaif_api.types.auth.cli import LoginCreateResponse
 ```
 
 Methods:
@@ -495,7 +495,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.cli import TokenCreateResponse
+from vaif_api.types.auth.cli import TokenCreateResponse
 ```
 
 Methods:
@@ -507,7 +507,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth import ForgotPasswordCreateResponse
+from vaif_api.types.auth import ForgotPasswordCreateResponse
 ```
 
 Methods:
@@ -519,7 +519,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth import LoginCreateResponse
+from vaif_api.types.auth import LoginCreateResponse
 ```
 
 Methods:
@@ -531,7 +531,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth import LogoutCreateResponse
+from vaif_api.types.auth import LogoutCreateResponse
 ```
 
 Methods:
@@ -543,7 +543,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth import MeUpdateResponse, MeListResponse
+from vaif_api.types.auth import MeUpdateResponse, MeListResponse
 ```
 
 Methods:
@@ -556,7 +556,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.me import AdminListResponse
+from vaif_api.types.auth.me import AdminListResponse
 ```
 
 Methods:
@@ -568,7 +568,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.me import ContextListResponse
+from vaif_api.types.auth.me import ContextListResponse
 ```
 
 Methods:
@@ -580,7 +580,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.me import LinkedAccountListResponse, LinkedAccountDeleteResponse
+from vaif_api.types.auth.me import LinkedAccountListResponse, LinkedAccountDeleteResponse
 ```
 
 Methods:
@@ -605,7 +605,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.oauth import ProviderListResponse
+from vaif_api.types.auth.oauth import ProviderListResponse
 ```
 
 Methods:
@@ -617,7 +617,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth import RefreshCreateResponse
+from vaif_api.types.auth import RefreshCreateResponse
 ```
 
 Methods:
@@ -629,7 +629,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth import ResetPasswordCreateResponse
+from vaif_api.types.auth import ResetPasswordCreateResponse
 ```
 
 Methods:
@@ -641,7 +641,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth import SignupCreateResponse
+from vaif_api.types.auth import SignupCreateResponse
 ```
 
 Methods:
@@ -655,7 +655,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.verify_email import ConfirmCreateResponse
+from vaif_api.types.auth.verify_email import ConfirmCreateResponse
 ```
 
 Methods:
@@ -667,7 +667,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.auth.verify_email import SendCreateResponse
+from vaif_api.types.auth.verify_email import SendCreateResponse
 ```
 
 Methods:
@@ -689,7 +689,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing import CheckoutCreateResponse
+from vaif_api.types.billing import CheckoutCreateResponse
 ```
 
 Methods:
@@ -717,7 +717,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing.enterprise import InquiryCreateResponse
+from vaif_api.types.billing.enterprise import InquiryCreateResponse
 ```
 
 Methods:
@@ -740,7 +740,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing.org import CancelCancelResponse
+from vaif_api.types.billing.org import CancelCancelResponse
 ```
 
 Methods:
@@ -752,7 +752,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing.org import ChangePlanChangePlanResponse
+from vaif_api.types.billing.org import ChangePlanChangePlanResponse
 ```
 
 Methods:
@@ -764,7 +764,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing.org import ContactContactsResponse
+from vaif_api.types.billing.org import ContactContactsResponse
 ```
 
 Methods:
@@ -784,7 +784,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing.org import CreditPurchaseResponse
+from vaif_api.types.billing.org import CreditPurchaseResponse
 ```
 
 Methods:
@@ -846,7 +846,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing.org import TaxInfoTaxInfoResponse
+from vaif_api.types.billing.org import TaxInfoTaxInfoResponse
 ```
 
 Methods:
@@ -867,7 +867,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing.org import UsageAlertUpdateResponse, UsageAlertUsageAlertsResponse
+from vaif_api.types.billing.org import UsageAlertUpdateResponse, UsageAlertUsageAlertsResponse
 ```
 
 Methods:
@@ -890,7 +890,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing import PortalCreateResponse
+from vaif_api.types.billing import PortalCreateResponse
 ```
 
 Methods:
@@ -904,7 +904,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing.promo_codes import ValidateCreateResponse
+from vaif_api.types.billing.promo_codes import ValidateCreateResponse
 ```
 
 Methods:
@@ -916,7 +916,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.billing import RedeemPromoCreateResponse
+from vaif_api.types.billing import RedeemPromoCreateResponse
 ```
 
 Methods:
@@ -940,7 +940,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types import BucketUpdateResponse
+from vaif_api.types import BucketUpdateResponse
 ```
 
 Methods:
@@ -1023,7 +1023,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types import ContactCreateResponse
+from vaif_api.types import ContactCreateResponse
 ```
 
 Methods:
@@ -1150,7 +1150,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.deployments import TokenCreateResponse
+from vaif_api.types.deployments import TokenCreateResponse
 ```
 
 Methods:
@@ -1162,7 +1162,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.deployments.tokens import ProjectRetrieveResponse
+from vaif_api.types.deployments.tokens import ProjectRetrieveResponse
 ```
 
 Methods:
@@ -1174,7 +1174,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.deployments.tokens import RevokeRevokeResponse
+from vaif_api.types.deployments.tokens import RevokeRevokeResponse
 ```
 
 Methods:
@@ -1283,7 +1283,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.enterprise import InquireCreateResponse
+from vaif_api.types.enterprise import InquireCreateResponse
 ```
 
 Methods:
@@ -1309,7 +1309,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.enterprise.org import OnboardingOnboardingResponse
+from vaif_api.types.enterprise.org import OnboardingOnboardingResponse
 ```
 
 Methods:
@@ -1448,7 +1448,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.functions import SourceSourceResponse
+from vaif_api.types.functions import SourceSourceResponse
 ```
 
 Methods:
@@ -1522,7 +1522,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.incidents import AckAckResponse
+from vaif_api.types.incidents import AckAckResponse
 ```
 
 Methods:
@@ -1534,7 +1534,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.incidents import BulkCreateResponse
+from vaif_api.types.incidents import BulkCreateResponse
 ```
 
 Methods:
@@ -1546,7 +1546,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.incidents import ProjectRetrieveResponse
+from vaif_api.types.incidents import ProjectRetrieveResponse
 ```
 
 Methods:
@@ -1558,7 +1558,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.incidents import ResolveResolveResponse
+from vaif_api.types.incidents import ResolveResolveResponse
 ```
 
 Methods:
@@ -1604,7 +1604,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.integrations.deliveries import EventRetrieveResponse
+from vaif_api.types.integrations.deliveries import EventRetrieveResponse
 ```
 
 Methods:
@@ -1616,7 +1616,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.integrations.deliveries import RetryRetryResponse
+from vaif_api.types.integrations.deliveries import RetryRetryResponse
 ```
 
 Methods:
@@ -1628,7 +1628,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.integrations.deliveries import SubscriptionRetrieveResponse
+from vaif_api.types.integrations.deliveries import SubscriptionRetrieveResponse
 ```
 
 Methods:
@@ -1642,7 +1642,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.integrations.dlq import ProjectRetrieveResponse
+from vaif_api.types.integrations.dlq import ProjectRetrieveResponse
 ```
 
 Methods:
@@ -1654,7 +1654,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.integrations import (
+from vaif_api.types.integrations import (
     SubscriptionCreateResponse,
     SubscriptionUpdateResponse,
     SubscriptionDeleteResponse,
@@ -1672,7 +1672,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.integrations.subscriptions import ProjectRetrieveResponse
+from vaif_api.types.integrations.subscriptions import ProjectRetrieveResponse
 ```
 
 Methods:
@@ -1684,7 +1684,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.integrations.subscriptions import TestTestResponse
+from vaif_api.types.integrations.subscriptions import TestTestResponse
 ```
 
 Methods:
@@ -1722,7 +1722,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.logs import ProjectRetrieveResponse
+from vaif_api.types.logs import ProjectRetrieveResponse
 ```
 
 Methods:
@@ -1928,7 +1928,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.oauth import OrgRetrieveResponse
+from vaif_api.types.oauth import OrgRetrieveResponse
 ```
 
 Methods:
@@ -1940,7 +1940,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.oauth.org import ConfigureConfigureResponse
+from vaif_api.types.oauth.org import ConfigureConfigureResponse
 ```
 
 Methods:
@@ -1952,7 +1952,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.oauth.org import ProviderUpdateResponse, ProviderDeleteResponse
+from vaif_api.types.oauth.org import ProviderUpdateResponse, ProviderDeleteResponse
 ```
 
 Methods:
@@ -1965,7 +1965,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.oauth.org.provider import AuthorizeGetAuthorizeResponse
+from vaif_api.types.oauth.org.provider import AuthorizeGetAuthorizeResponse
 ```
 
 Methods:
@@ -1977,7 +1977,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.oauth.org.provider import RefreshRefreshResponse
+from vaif_api.types.oauth.org.provider import RefreshRefreshResponse
 ```
 
 Methods:
@@ -2030,7 +2030,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.orgs import (
+from vaif_api.types.orgs import (
     BillingContactDeleteResponse,
     BillingContactBillingContactsResponse,
     BillingContactGetBillingContactsResponse,
@@ -2087,7 +2087,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types import PlanRetrieveResponse
+from vaif_api.types import PlanRetrieveResponse
 ```
 
 Methods:
@@ -2099,7 +2099,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.plans import ApplyCreateResponse
+from vaif_api.types.plans import ApplyCreateResponse
 ```
 
 Methods:
@@ -2111,7 +2111,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.plans import OrgRetrieveResponse
+from vaif_api.types.plans import OrgRetrieveResponse
 ```
 
 Methods:
@@ -2123,7 +2123,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.plans import SaveCreateResponse
+from vaif_api.types.plans import SaveCreateResponse
 ```
 
 Methods:
@@ -2162,7 +2162,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types import ProjectCreateResponse, ProjectUpdateResponse
+from vaif_api.types import ProjectCreateResponse, ProjectUpdateResponse
 ```
 
 Methods:
@@ -2178,7 +2178,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.projects import APIKeyUpdateResponse, APIKeyAPIKeysResponse
+from vaif_api.types.projects import APIKeyUpdateResponse, APIKeyAPIKeysResponse
 ```
 
 Methods:
@@ -2204,7 +2204,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.projects import (
+from vaif_api.types.projects import (
     AuthUpdateResponse,
     AuthConfirmResponse,
     AuthForgotPasswordResponse,
@@ -2389,7 +2389,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.projects import RegionRegionResponse
+from vaif_api.types.projects import RegionRegionResponse
 ```
 
 Methods:
@@ -2417,7 +2417,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.projects import StorageSettingsResponse
+from vaif_api.types.projects import StorageSettingsResponse
 ```
 
 Methods:
@@ -2437,7 +2437,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.projects import UserUpdateResponse, UserUsersResponse
+from vaif_api.types.projects import UserUpdateResponse, UserUsersResponse
 ```
 
 Methods:
@@ -2453,7 +2453,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.projects.users import BanBanResponse
+from vaif_api.types.projects.users import BanBanResponse
 ```
 
 Methods:
@@ -2481,7 +2481,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.quickstart import ProjectRetrieveResponse
+from vaif_api.types.quickstart import ProjectRetrieveResponse
 ```
 
 Methods:
@@ -2493,7 +2493,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.quickstart.project import JsonGetJsonResponse
+from vaif_api.types.quickstart.project import JsonGetJsonResponse
 ```
 
 Methods:
@@ -2623,7 +2623,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.schema_engine import ApplyCreateResponse
+from vaif_api.types.schema_engine import ApplyCreateResponse
 ```
 
 Methods:
@@ -2635,7 +2635,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.schema_engine import ChangeGetChangesResponse
+from vaif_api.types.schema_engine import ChangeGetChangesResponse
 ```
 
 Methods:
@@ -2647,7 +2647,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.schema_engine import IntrospectRetrieveResponse
+from vaif_api.types.schema_engine import IntrospectRetrieveResponse
 ```
 
 Methods:
@@ -2661,7 +2661,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.schema_engine.migrations import ProjectRetrieveResponse
+from vaif_api.types.schema_engine.migrations import ProjectRetrieveResponse
 ```
 
 Methods:
@@ -2673,7 +2673,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.schema_engine import PreviewCreateResponse
+from vaif_api.types.schema_engine import PreviewCreateResponse
 ```
 
 Methods:
@@ -2685,7 +2685,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.schema_engine import QueryCreateResponse
+from vaif_api.types.schema_engine import QueryCreateResponse
 ```
 
 Methods:
@@ -2697,7 +2697,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types import SchemaCreateResponse
+from vaif_api.types import SchemaCreateResponse
 ```
 
 Methods:
@@ -2709,7 +2709,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.schemas import ProjectRetrieveResponse
+from vaif_api.types.schemas import ProjectRetrieveResponse
 ```
 
 Methods:
@@ -2781,7 +2781,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.status import SubscribeCreateResponse
+from vaif_api.types.status import SubscribeCreateResponse
 ```
 
 Methods:
@@ -2801,7 +2801,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.status import UnsubscribeRetrieveResponse
+from vaif_api.types.status import UnsubscribeRetrieveResponse
 ```
 
 Methods:
@@ -2813,7 +2813,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.status import UptimeRetrieveResponse
+from vaif_api.types.status import UptimeRetrieveResponse
 ```
 
 Methods:
@@ -2827,7 +2827,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.storage import BucketCreateResponse
+from vaif_api.types.storage import BucketCreateResponse
 ```
 
 Methods:
@@ -2861,7 +2861,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.storage import DownloadURLCreateResponse
+from vaif_api.types.storage import DownloadURLCreateResponse
 ```
 
 Methods:
@@ -2902,7 +2902,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.storage.multipart import AbortAbortResponse
+from vaif_api.types.storage.multipart import AbortAbortResponse
 ```
 
 Methods:
@@ -2914,7 +2914,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.storage.multipart import CompleteCompleteResponse
+from vaif_api.types.storage.multipart import CompleteCompleteResponse
 ```
 
 Methods:
@@ -2926,7 +2926,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.storage.multipart import CreateCreateResponse
+from vaif_api.types.storage.multipart import CreateCreateResponse
 ```
 
 Methods:
@@ -2938,7 +2938,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.storage.multipart import PartURLPartURLResponse
+from vaif_api.types.storage.multipart import PartURLPartURLResponse
 ```
 
 Methods:
@@ -2956,7 +2956,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.storage import UploadBase64CreateResponse
+from vaif_api.types.storage import UploadBase64CreateResponse
 ```
 
 Methods:
@@ -2974,7 +2974,7 @@ Methods:
 Types:
 
 ```python
-from vaif.types.storage import UploadURLCreateResponse
+from vaif_api.types.storage import UploadURLCreateResponse
 ```
 
 Methods:

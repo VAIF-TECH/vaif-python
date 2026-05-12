@@ -2,7 +2,7 @@
 
 Public surface mirrors ``@vaif/client/realtime``::
 
-    from vaif.lib.realtime import Realtime
+    from vaif_api.lib.realtime import Realtime
 
     rt = Realtime(client=vaif)
     await rt.connect()

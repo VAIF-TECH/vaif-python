@@ -220,7 +220,7 @@ class BaseAPIResponse(Generic[R]):
             and not issubclass(origin, BaseModel)
             and issubclass(origin, pydantic.BaseModel)
         ):
-            raise TypeError("Pydantic models must subclass our base model type, e.g. `from vaif import BaseModel`")
+            raise TypeError("Pydantic models must subclass our base model type, e.g. `from vaif_api import BaseModel`")
 
         if (
             cast_to is not object
@@ -286,7 +286,7 @@ class APIResponse(BaseAPIResponse[R]):
         the `to` argument, e.g.
 
         ```py
-        from vaif import BaseModel
+        from vaif_api import BaseModel
 
 
         class MyModel(BaseModel):
@@ -388,7 +388,7 @@ class AsyncAPIResponse(BaseAPIResponse[R]):
         the `to` argument, e.g.
 
         ```py
-        from vaif import BaseModel
+        from vaif_api import BaseModel
 
 
         class MyModel(BaseModel):

@@ -10,7 +10,7 @@ from typing import Any, Dict, List
 import httpx
 import pytest
 
-from vaif.lib.storage import (
+from vaif_api.lib.storage import (
     upload,
     UploadCancelledError,
 )
@@ -245,7 +245,7 @@ async def test_upload_picks_up_client_attributes() -> None:
 
 
 async def test_upload_error_on_4xx() -> None:
-    from vaif.lib.storage import UploadError
+    from vaif_api.lib.storage import UploadError
 
     def handler(req: httpx.Request) -> httpx.Response:
         return httpx.Response(403, text="forbidden")
@@ -266,7 +266,7 @@ async def test_upload_error_on_4xx() -> None:
 
 
 async def test_signed_url_helper() -> None:
-    from vaif.lib.storage import upload_to_signed_url
+    from vaif_api.lib.storage import upload_to_signed_url
 
     def handler(req: httpx.Request) -> httpx.Response:
         return httpx.Response(200, headers={"etag": "abc"})

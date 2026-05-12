@@ -6,8 +6,8 @@ import httpx
 import pytest
 import pydantic
 
-from vaif import Vaif, AsyncVaif, BaseModel
-from vaif._response import (
+from vaif_api import Vaif, AsyncVaif, BaseModel
+from vaif_api._response import (
     APIResponse,
     BaseAPIResponse,
     AsyncAPIResponse,
@@ -15,8 +15,8 @@ from vaif._response import (
     AsyncBinaryAPIResponse,
     extract_response_type,
 )
-from vaif._streaming import Stream
-from vaif._base_client import FinalRequestOptions
+from vaif_api._streaming import Stream
+from vaif_api._base_client import FinalRequestOptions
 
 
 class ConcreteBaseAPIResponse(APIResponse[bytes]): ...
@@ -68,7 +68,7 @@ def test_response_parse_mismatched_basemodel(client: Vaif) -> None:
 
     with pytest.raises(
         TypeError,
-        match="Pydantic models must subclass our base model type, e.g. `from vaif import BaseModel`",
+        match="Pydantic models must subclass our base model type, e.g. `from vaif_api import BaseModel`",
     ):
         response.parse(to=PydanticModel)
 
@@ -86,7 +86,7 @@ async def test_async_response_parse_mismatched_basemodel(async_client: AsyncVaif
 
     with pytest.raises(
         TypeError,
-        match="Pydantic models must subclass our base model type, e.g. `from vaif import BaseModel`",
+        match="Pydantic models must subclass our base model type, e.g. `from vaif_api import BaseModel`",
     ):
         await response.parse(to=PydanticModel)
 

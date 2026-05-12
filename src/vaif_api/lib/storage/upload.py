@@ -2,7 +2,7 @@
 
 Usage::
 
-    from vaif.lib.storage import upload
+    from vaif_api.lib.storage import upload
 
     # awaitable form:
     result = await upload(

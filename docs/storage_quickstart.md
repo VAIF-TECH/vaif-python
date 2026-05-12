@@ -8,8 +8,8 @@ callbacks, and cancellation.
 
 ```python
 import asyncio
-from vaif import AsyncVaif
-from vaif.lib.storage import upload
+from vaif_api import AsyncVaif
+from vaif_api.lib.storage import upload
 
 async def main():
     vaif = AsyncVaif(api_key="...")
@@ -76,7 +76,7 @@ retried up to 3 times with exponential backoff (1s, 2s, 4s).
 For S3-compatible signed PUT URLs (e.g. from `vaif.storage.create_upload_url`):
 
 ```python
-from vaif.lib.storage import upload_to_signed_url
+from vaif_api.lib.storage import upload_to_signed_url
 
 await upload_to_signed_url(
     "https://signed.example.com/...",

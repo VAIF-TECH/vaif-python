@@ -2,7 +2,7 @@
 
 Public usage::
 
-    from vaif.lib.storage import upload
+    from vaif_api.lib.storage import upload
 
     handle = upload(vaif, bucket="avatars", path="me.jpg",
                     file=open("me.jpg", "rb"), content_type="image/jpeg")

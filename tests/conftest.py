@@ -10,8 +10,8 @@ import httpx
 import pytest
 from pytest_asyncio import is_async_test
 
-from vaif import Vaif, AsyncVaif, DefaultAioHttpClient
-from vaif._utils import is_dict
+from vaif_api import Vaif, AsyncVaif, DefaultAioHttpClient
+from vaif_api._utils import is_dict
 
 if TYPE_CHECKING:
     from _pytest.fixtures import FixtureRequest  # pyright: ignore[reportPrivateImportUsage]
